@@ -37,7 +37,7 @@ const App = () => {
       </div>
 
       <div style={{ maxWidth: '800px', margin: '0 auto 48px auto'}}>
-        <Postal postal={postal} updatePostal={setPostal} />
+        <Postal defaultValue={postal} updatePostal={setPostal} />
       </div>
 
       <div style={{ maxWidth: '800px', margin: '0 auto 48px auto'}}>
