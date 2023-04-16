@@ -11,9 +11,6 @@ const CartProducts = ({
 
   return (
     <div>
-      {loadingCart && (
-        <span>Laddar varukorgen...</span>
-      )}
       {cart.products.map((product) => (
         <CartProduct {...product} setQuantity={setQuantity} key={product.id} />
       ))}
