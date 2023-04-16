@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 const CART_SERVICE_URL = 'http://localhost:8081/api/cart';
 
 export default (cart, postal) => {
-  const [response, setresponse] = useState();
+  const [options, setOptions] = useState<DeliveryOption[]>();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!postal || !cart?.id) {
-      setresponse(undefined);
+      setOptions(undefined);
     } else {
       fetch(`${CART_SERVICE_URL}/${cart.id}/delivery/${postal}`)
         .then((resp) => resp.json())

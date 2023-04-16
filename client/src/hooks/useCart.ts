@@ -4,7 +4,7 @@ const MOCK_CART_ID = 'MOCK_CART_ID';
 const CART_SERVICE_URL = 'http://localhost:8081/api/cart';
 
 export default (postal) => {
-  const [cart, setCart] = useState();
+  const [cart, setCart] = useState<Cart>();
   const [loading, setLoading] = useState(false);
   const [deliveryOptions, setDeliveryOptions] = useState();
 
