@@ -1,10 +1,10 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState } from "react";
 
 const Postal = ({ defaultValue, updatePostal }) => {
-  const [postal, setPostal] = useState(defaultValue || '');
+  const [postal, setPostal] = useState(defaultValue || "");
 
   const handleChange = useCallback((e) => {
-    setPostal(e.target.value.replace(/[^0-9]/, ''));
+    setPostal(e.target.value.replace(/[^0-9]/, ""));
   }, []);
 
   const handleSubmit = useCallback(() => {
@@ -23,9 +23,7 @@ const Postal = ({ defaultValue, updatePostal }) => {
           name="postal"
         />
       </label>
-      <button onClick={handleSubmit}>
-        Uppdatera
-      </button>
+      <button onClick={handleSubmit}>Uppdatera</button>
     </div>
   );
 };
