@@ -1,8 +1,8 @@
-const { build, context } = require('esbuild');
+const { context } = require('esbuild');
 
 const run = async () => {
   const ctx = await context({
-    entryPoints: ['src/index.js'],
+    entryPoints: ['src/index.tsx'],
     bundle: true,
     outfile: 'public/index.js',
     format: 'iife',
