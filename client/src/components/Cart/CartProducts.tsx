@@ -1,8 +1,9 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 
 const CartProducts = ({
   cart,
   setQuantity,
+  loadingCart,
 }) => {
   if (!cart) {
     return null;
@@ -10,8 +11,11 @@ const CartProducts = ({
 
   return (
     <div>
+      {loadingCart && (
+        <span>Laddar varukorgen...</span>
+      )}
       {cart.products.map((product) => (
-        <CartProduct {...product} setQuantity={setQuantity} />
+        <CartProduct {...product} setQuantity={setQuantity} key={product.id} />
       ))}
     </div>
   );
@@ -36,11 +40,11 @@ const CartProduct = ({
 
   const handleDecreaseQuantity = useCallback(() => {
     setQuantity(id, quantity - 1);
-  }, [id, setQuantity]);
+  }, [id, quantity, setQuantity]);
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
-      <div style={{ width: '78px', height: '78px' }}>
+     <div style={{ width: '78px', height: '78px' }}>
         <img src={imageUrl} style={{ width: '100%', maxHeight: '100%' }} />
       </div>
       <div style={{ marginLeft: '48px', display: 'flex', flex: '1 1 auto' }}>
