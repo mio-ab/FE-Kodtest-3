@@ -14,7 +14,10 @@ const run = async () => {
 
   if (process.argv.indexOf('--watch') >= 0) {
     await ctx.watch();
-  }  
+  } else {
+    ctx.rebuild();
+    ctx.dispose();
+  }
 }
 
 run();
