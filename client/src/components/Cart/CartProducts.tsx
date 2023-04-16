@@ -44,7 +44,7 @@ const CartProduct = ({
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
-     <div style={{ width: '78px', height: '78px' }}>
+      <div style={{ width: '78px', height: '78px' }}>
         <img src={imageUrl} style={{ width: '100%', maxHeight: '100%' }} />
       </div>
       <div style={{ marginLeft: '48px', display: 'flex', flex: '1 1 auto' }}>
